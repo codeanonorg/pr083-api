@@ -3,7 +3,7 @@ DATA := data
 DIST := dist
 API := src
 API_URL := http://localhost:3000
-VERSION := $(shell git rev-parse --abbrev-ref HEAD)
+VERSION := $(shell git describe --abbrev=0 --tags)
 SDIST := sdist-$(VERSION).tar.gz
 
 .PHONY: all clean sdist
