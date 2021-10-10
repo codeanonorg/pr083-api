@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es2018",
+        "outDir": "dist",
+        "module": "es6",
+        "moduleResolution": "node",
+        "lib": ["dom", "es6"],
+        "declaration": true,
+        "sourceMap": true,
+        "typeRoots": ["./types"]
+    }
+}

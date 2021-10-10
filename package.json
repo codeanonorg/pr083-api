@@ -1,0 +1,32 @@
+{
+  "name": "pr083-api",
+  "version": "1.0.0",
+  "description": "Generated package for the pr083 API",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "make dist",
+    "prepack": "make dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeanonorg/pr083-api.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "CodeAnon",
+    "url": "https://codeanon.org",
+    "email": "contact@codeanon.org"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeanonorg/pr083-api/issues"
+  },
+  "homepage": "https://github.com/codeanonorg/pr083-api#readme",
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.4.12",
+    "typescript": "^4.4.3"
+  }
+}
