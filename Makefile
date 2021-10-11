@@ -33,5 +33,5 @@ $(API): node_modules $(DATA)/openapi.json
 $(DIST): node_modules $(API)
 	pnpx tsc
 
-$(SDIST): README.md LICENSE package.json tsconfig.jsono $(DATA) $(API) types
+$(SDIST): README.md LICENSE package.json tsconfig.json $(DATA) $(API) types
 	tar cvzf $@ $^
