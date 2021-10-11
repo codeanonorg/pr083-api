@@ -13,16 +13,25 @@ all: $(DIST)
 clean:
 	-rm -rf $(API) $(DIST) $(SDIST)
 
+fullclean: clean
+	-rm -rf $(DATA)
+
 sdist: $(SDIST)
 
 node_modules: package.json pnpm-lock.yaml
 	$(NPM) install
 
-$(API): node_modules
+$(DATA):
+	mkdir -p $@
+
+$(DATA)/openapi.json: $(DATA)
+	wget $(API_URL)/-json -O $@
+
+$(API): node_modules $(DATA)/openapi.json
 	pnpx @openapitools/openapi-generator-cli generate --skip-validate-spec -i $(API_URL)/-json -g typescript-fetch -o $(API)
 
 $(DIST): node_modules $(API)
 	pnpx tsc
 
-$(SDIST): README.md LICENSE package.json tsconfig.json $(API) types
+$(SDIST): README.md LICENSE package.json tsconfig.jsono $(DATA) $(API) types
 	tar cvzf $@ $^
