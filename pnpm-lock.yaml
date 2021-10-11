@@ -2,10 +2,12 @@ lockfileVersion: 5.3
 
 specifiers:
   '@openapitools/openapi-generator-cli': ^2.4.12
+  prettier: ^2.4.1
   typescript: ^4.4.3
 
 devDependencies:
   '@openapitools/openapi-generator-cli': 2.4.12
+  prettier: 2.4.1
   typescript: 4.4.3
 
 packages:
@@ -504,6 +506,12 @@ packages:
 
   /path-to-regexp/3.2.0:
     resolution: {integrity: sha512-jczvQbCUS7XmS7o+y1aEO9OBVFeZBQ1MDSEqmO7xSoPgOPoowY/SxLpZ6Vh97/8qHZOteiCKb7gkG9gA2ZUxJA==}
+    dev: true
+
+  /prettier/2.4.1:
+    resolution: {integrity: sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /readable-stream/3.6.0:

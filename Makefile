@@ -28,7 +28,13 @@ $(DATA)/openapi.json: $(DATA)
 	wget $(API_URL)/-json -O $@
 
 $(API): node_modules $(DATA)/openapi.json
-	pnpx @openapitools/openapi-generator-cli generate --skip-validate-spec -i $(API_URL)/-json -g typescript-fetch -o $(API)
+	TS_POST_PROCESS_FILE="prettier --write" pnpx @openapitools/openapi-generator-cli generate \
+    --skip-validate-spec \
+    --enable-post-process-file \
+    --additional-properties=supportsES6=true,typescriptThreePlus=true \
+    -i $(API_URL)/-json \
+    -g typescript-fetch \
+    -o $(API)
 
 $(DIST): node_modules $(API)
 	pnpx tsc

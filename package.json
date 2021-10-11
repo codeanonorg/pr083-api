@@ -27,6 +27,7 @@
   "homepage": "https://github.com/codeanonorg/pr083-api#readme",
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.4.12",
+    "prettier": "^2.4.1",
     "typescript": "^4.4.3"
   }
 }
